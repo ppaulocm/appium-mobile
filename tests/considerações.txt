@@ -1,0 +1,5 @@
+Login com google account
+Mesmo sabendo que sai do escopo da aplicação,optei por logar no google pra deixar os cenários mais consistentes.
+Principalmente os que involvem acesso ao facebook. Para fazer isso, reseto a aplicação para o fluxo ficar consistente. 
+Dessa forma, em toda execução, o login da conta do google é efetuado e não existe nenhum cache de login com o facebook.
+

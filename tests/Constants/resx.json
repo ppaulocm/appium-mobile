@@ -1,0 +1,18 @@
+{
+    "en": {
+        "BUTTON_PLAY_NOW": "PLAY NOW!",
+        "BUTTON_MULTIPLAYER": "MULTIPLAYER",
+        "TEXT_ONLINE_PLAYERS": "Players online",
+        "BUTTON_MORE_GAMES": "+ GAMES",
+        "TEXT_NO_INTERNET_CONNECTION_TITLE": "NO INTERNET CONNECTION",
+        "TEXT_NO_INTERNET_CONNECTION_DESCRIPTION": "Check your connection or play against robots"
+    },
+    "pt": {
+        "BUTTON_PLAY_NOW": "JOGAR AGORA!",
+        "BUTTON_MULTIPLAYER": "JOGAR COM PESSOAS",
+        "TEXT_ONLINE_PLAYERS": "jogadores online",
+        "BUTTON_MORE_GAMES": "+ JOGOS",
+        "TEXT_NO_INTERNET_CONNECTION_TITLE": "SEM CONEXÃO COM A INTERNET",
+        "TEXT_NO_INTERNET_CONNECTION_DESCRIPTION": "Verifique sua conexão ou jogue Sozinho com Robôs."
+    }
+}
