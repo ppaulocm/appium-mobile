@@ -51,6 +51,7 @@ appium-doctor   //verificar algum problema na instalação do appium
 ```
 
 > Requisitos do appium são:
+´´´js
 info AppiumDoctor  ✔ Node version is 12.16.1
 info AppiumDoctor  ✔ ANDROID_HOME is set to: C:\Users\...\AppData\Local\Android\Sdk
 info AppiumDoctor  ✔ JAVA_HOME is set to: C:\Program Files (x86)\Java\jre1.8.0_251
@@ -58,7 +59,7 @@ info AppiumDoctor  ✔ adb exists at: C:\Users\...\AppData\Local\Android\Sdk\pla
 info AppiumDoctor  ✔ android exists at: C:\Users\...\AppData\Local\Android\Sdk\tools\android.bat  
 info AppiumDoctor  ✔ emulator exists at: C:\Users\...\AppData\Local\Android\Sdk\tools\emulator.exe
 info AppiumDoctor  ✔ JAVA_HOME\bin is set to: C:\Program Files (x86)\Java\jre1.8.0_251\bin
-
+´´´
 
 2. Clone Project or download project
 https://github.com/ppaulocm/appium-tranca-mobile
