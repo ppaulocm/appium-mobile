@@ -1,4 +1,4 @@
-import AppScreen from './app.screen';
+import AppScreen from '../app.screen';
 
 const SELECTORS = {
     // android and ios selector declared according need
@@ -13,7 +13,7 @@ const SELECTORS = {
     PLAY_MULTIPLAYER_BUTTON: "//android.widget.Button[@resource-id='com.jogatina.tranca:id/buttonMultiPlayer']",
     ONLINE_PLAYERS: "//android.widget.TextView[@resource-id='com.jogatina.tranca:id/textViewPlayersOnline']",
     INVITE_FRIENDS_BUTON: "//android.widget.ImageButton[@resource-id='com.jogatina.tranca:id/buttonInviteFriends']",
-    OPTIONS_BUTTON: "//android.widget.ImageButton[@resource-id='com.jogatina.tranca:id/buttonOptions']",
+    SETTINGS_BUTTON: "//android.widget.ImageButton[@resource-id='com.jogatina.tranca:id/buttonOptions']",
     ACHIEVEMENTS_BUTTON: "//android.widget.ImageButton[@resource-id='com.jogatina.tranca:id/buttonAchievements']",
     CROSS_PROMOTION_IMAGE: "//android.widget.ImageView[@resource-id='com.jogatina.tranca:id/imageViewCrossPromotion']",
     MAIN_SCREEN: "//android.widget.ImageView[@resource-id='com.jogatina.tranca:id/imageViewLogo']",
@@ -57,7 +57,7 @@ class MainScreen extends AppScreen {
     }
 
     get settingsButton() {
-        return $(OPTIONS_BUTTON)
+        return $(SELECTORS.SETTINGS_BUTTON)
     }
 }
 

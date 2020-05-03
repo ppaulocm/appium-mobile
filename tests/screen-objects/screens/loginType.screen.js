@@ -1,4 +1,4 @@
-import AppScreen from './app.screen';
+import AppScreen from '../app.screen';
 
 const SELECTORS = {
     ANDROID: {

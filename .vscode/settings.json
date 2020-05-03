@@ -1,7 +1,6 @@
 {
     "cucumberautocomplete.steps": [
         "tests/steps/*.js",
-        "node_modules/qa-lib/src/step_definitions/*.js"
     ],
     "cucumberautocomplete.syncfeatures": "tests/features/*feature",
     "cucumberautocomplete.strictGherkinCompletion": true,
@@ -29,5 +28,11 @@
         "other": true
     },
     "cucumberautocomplete.gherkinDefinitionPart": "(Given|When|Then)\\(",
-    "cucumberautocomplete.stepRegExSymbol": "'"
+    "cucumberautocomplete.stepRegExSymbol": "'",
+    "cSpell.ignoreWords": [
+        "jogatina"
+    ],
+    "cSpell.enableFiletypes": [
+        "!markdown"
+    ]
 }

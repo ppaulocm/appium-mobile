@@ -1,24 +1,27 @@
-var arguments = require('minimist')(process.argv.slice(2));
-
 exports.config = {
-    // ====================
-    // Runner and framework
-    // Configuration
-    // ====================
     runner: 'local',
-    language: arguments.language,
-    locale: arguments.locale,
     framework: 'cucumber',
-    sync: true,
-    logLevel: 'trace',
+    logLevel: 'silent',
     deprecationWarnings: true,
     outputDir: './test-report/output',
-    bail: 0,
-    baseUrl: 'http://the-internet.herokuapp.com',
-    waitforTimeout: 6000,
+    waitforTimeout: 10000,
     connectionRetryTimeout: 90000,
     connectionRetryCount: 3,
-    specs: ['tests/features/**/1*.feature'],
+    specs: ['tests/features/**/*.feature'],
+    suites: {
+        connection: [
+            'tests/features/Connection.feature'
+        ],
+        invite: [
+            'tests/features/Invite.feature'
+        ],
+        nickname: [
+            'tests/features/Nickname.feature'
+        ],
+        language: [
+            'tests/features/Language.feature'
+        ],
+    },
     reporters: [
         'spec',
         [
@@ -46,7 +49,7 @@ exports.config = {
         tags: [],
         timeout: 100000,
         ignoreUndefinedDefinitions: false,
-        tagExpression: 'not @skip',
+        tagExpression: 'not @skip'
     },
 
     // ====================
@@ -54,27 +57,22 @@ exports.config = {
     // ====================
     services: ['appium'],
     appium: {
-        // For options see
-        // https://github.com/webdriverio/webdriverio/tree/master/packages/wdio-appium-service
-        // If you need a logs from appium server, make log equal true.
-        log: false,
-        args: {
-            // For arguments see
-            // https://github.com/webdriverio/webdriverio/tree/master/packages/wdio-appium-service
-        },
         command: 'appium',
     },
 
     port: 4723,
 
-    // ====================
-    // Some hooks
-    // ====================
-
-    //This code is responsible for taking the screenshot in case of error and attaching it to the report
     afterStep(uri, feature, scenario) {
         if (scenario.error) {
-            driver.takeScreenshot();
+            driver.takeScreenshot()
         }
     },
+
+    afterScenario() {
+        console.log('Test finished now. Generating Report....')
+        console.log('App will close after 10s from now...')
+        driver.pause(10000)
+        driver.closeApp()
+    },
 };
+

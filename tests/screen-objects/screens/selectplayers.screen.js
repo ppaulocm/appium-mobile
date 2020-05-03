@@ -1,4 +1,4 @@
-import AppScreen from './app.screen';
+import AppScreen from '../app.screen';
 
 const SELECTORS = {
     // android and ios selector declared according need
@@ -16,7 +16,7 @@ const SELECTORS = {
 
 class SelectPlayers extends AppScreen {
     constructor() {
-        super(SELECTORS.MAIN_SCREEN);
+        super(SELECTORS.ANDROID.MAIN_SCREEN);
     }
 
     get selectTwoPlayers() {

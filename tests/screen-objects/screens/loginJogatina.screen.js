@@ -1,8 +1,8 @@
-import AppScreen from './app.screen';
+import AppScreen from '../app.screen';
 
 const SELECTORS = {
     ANDROID: {
-        LOGIN_SCREEN: "//android.widget.FrameLayout[@resource-id='com.jogatina.tranca:id/content']",
+        LOGIN_SCREEN: "//android.widget.FrameLayout[@resource-id='android:id/content']",
         JOGATINA_EMAIL_TEXTBOX: "//android.widget.EditText[@resource-id='com.jogatina.tranca:id/inputEmail']",
         JOGATINA_PASSWORD_TEXTBOX: "//android.widget.EditText[@resource-id='com.jogatina.tranca:id/inputPwd']",
         JOGATINA_PLAYNOW_BUTTON: "//android.widget.Button[@resource-id='com.jogatina.tranca:id/btnPlayNow']",

@@ -2,6 +2,7 @@ Feature: Invite new Players
     This scenario consider that facebook is already installed on device/emulator and has permissions are allowed to Tranca Jogatina.
 
     Background:
+        Given player is logged with store account
         Given app is opened on main menu screen
 
     Scenario: Invite new players using facebook account

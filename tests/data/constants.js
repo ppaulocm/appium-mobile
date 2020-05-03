@@ -1,0 +1,2 @@
+export const DEFAULT_TIMEOUT = 60000;
+export const DEFAULT_BROWSER_PAUSE = 5000;
