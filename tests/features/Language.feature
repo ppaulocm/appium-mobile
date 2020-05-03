@@ -1,10 +1,9 @@
-Feature: Verify language
+Feature: Verify main screen label language
 
     Background:
-        Given player is logged with store account
+        Given app is opened on main menu screen
 
     Scenario: Check main menu labels in current device language
-        Given app is opened on main menu screen
         Then the main menu screen labels are shown according device language
 
 

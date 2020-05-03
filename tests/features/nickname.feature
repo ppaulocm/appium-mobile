@@ -2,7 +2,6 @@ Feature: Change nickname
     This scenario consider that facebook app exists on device/emulator and has facebook permission allow to Tranca Jogatina.
 
     Background:
-        Given player is logged with store account
         Given app is opened on main menu screen
 
     Scenario: Change nickname using Jogatina account
@@ -18,8 +17,7 @@ Feature: Change nickname
         Then dialog box open to edit user nickname
         When player insert a new nickname
             And tap on validate button
-        Then message indicating nickname availability is displayed
-        When player tap on Save
+            And player tap on Save
         Then new nickname is shown at top of screen
 
 

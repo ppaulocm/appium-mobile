@@ -1,10 +1,9 @@
 Feature: Verify app behavior when there is no internet connectivity
 
     Background:
-        Given player is logged with store account
+        Given app is opened on main menu screen
 
     Scenario: Access multiplayer tab without internet connection
-        Given app is opened on main menu screen
             And there is no wifi connection
         When player tap on Multiplayer button
         Then An error indicating that is no connection is shown

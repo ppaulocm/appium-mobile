@@ -6,7 +6,6 @@
     - [Instalação do ambiente:](#instalação-do-ambiente)
     - [Configurações de execução.](#configurações-de-execução)
     - [Considerações sobre a construção dos testes](#considerações-sobre-a-construção-dos-testes)
-    - [Comentários Gerais](#comentários-gerais)
     - [Casos de teste automatizados](#casos-de-teste-automatizados)
   - [Test Cases](#test-cases)
     - [Test Cases - Settings](#test-cases---settings)
@@ -59,11 +58,8 @@ Node version is 12.16.1
 - info AppiumDoctor  ✔ emulator exists at: C:\Users\...\AppData\Local\Android\Sdk\tools\emulator.exe
 - info AppiumDoctor  ✔ JAVA_HOME\bin is set to: C:\Program Files (x86)\Java\jre1.8.0_251\bin
 
-<<<<<<< HEAD
+
 5. Clone Project or download project
-=======
-2. Clone Project or download project
->>>>>>> 226be497e5eafee247766f81f7f24f40f8035842
 https://github.com/ppaulocm/appium-tranca-mobile
 
 6. Install project and dependences
@@ -74,9 +70,12 @@ https://github.com/ppaulocm/appium-tranca-mobile
 ### Configurações de execução.
 1. É necessário uma conta Jogatina e uma conta facebook para executar os testes que devem ser setadas no arquivo tests\data\accounts.json
 2. É necessário que o tranca jogatina já tenha permissão de acesso aos dados do facebook.
-3. Por testar em um aplicativo no device, considerei que já existe uma conta do google play configurada e também que esteja com o autologin habilitado.
-   
-   <img src="/docs/img/autologingoogle.jpg" width="250">
+3. Desabilitei no  Google Play Games a opção de Login automático em jogos compatíveis para que o Login do Google Play não abra quando o jogar carregar. **DESMARCAR A OPÇÃO LOGIN AUTOMÁTICO nas configurações do Play Games .**
+
+<p align="center">   
+   <img src="/docs/img/disableAutoLogin.jpg" width="600">
+   <img  src="/docs/img/autologingoogle.jpg" width="250">
+</p>
 
 
 4. O cenário de teste considera somente o uso do Wifi. O uso de dados móveis deve estar desabilitado. Poderia ter desabilitado essa configuração em tempo de execução mas era necessário permissões adicionais para interagir com a conexão 4G.
@@ -97,14 +96,12 @@ https://github.com/ppaulocm/appium-tranca-mobile
  4. Algumas issues do github estavam relacionadas com a configuração [setWebViewRenderProcessClient](https://developer.android.com/reference/android/webkit/WebView#setWebViewRenderProcessClient(java.util.concurrent.Executor,%20android.webkit.WebViewRenderProcessClient)). Talvez tenha relação com o resultado que encontrei no appium.
 
 
-<img src="/docs/img/inspectGame.jpg"">
+<img src="/docs/img/inspectGame.jpg">
  
 
 > **Tempo de execução dos testes**
 > Apesar dos testes estarem rodando em um tempo aceitável, após a ultima assertiva, por estar executando diretamente no device, o dispositivo gera um bugreport com dados de utilização do sistema com o nome 'bugreport-sanders_nt-OPS...'. Não consegui desabilitar essa opção. Por isso, após as validações,a finalização da execução demora um tempo adicional para gerar esse report.
 
-### Comentários Gerais
-1. O link de compartilhamento está sem o https -> http://www.jogatina.com/site/share/tranca
 
 ### Casos de teste automatizados
 
