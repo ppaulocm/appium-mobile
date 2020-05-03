@@ -2,7 +2,7 @@
 
 - [Desafio QA Gazeus](#desafio-qa-gazeus)
   - [Testes automatizados](#testes-automatizados)
-    - [Stack Escolhida:](#stack-escolhida)
+    - [Stack dos testes](#stack-dos-testes)
     - [Instalação do ambiente:](#instalação-do-ambiente)
     - [Configurações de execução.](#configurações-de-execução)
     - [Considerações sobre a construção dos testes](#considerações-sobre-a-construção-dos-testes)
@@ -10,14 +10,18 @@
     - [Casos de teste automatizados](#casos-de-teste-automatizados)
   - [Test Cases](#test-cases)
     - [Test Cases - Settings](#test-cases---settings)
-    - [Test Cases - Game Play Offline](#test-cases---game-play-offline)
-      - [Fluxos negativos](#fluxos-negativos)
-    - [Test Cases - Game Play Online](#test-cases---game-play-online)
+      - [Settings - Login](#settings---login)
+      - [Settings - Game Level](#settings---game-level)
+    - [Test Cases - Game Play](#test-cases---game-play)
+      - [Game Screen](#game-screen)
+      - [Game Rules](#game-rules)
+      - [Game Logic - Negative Workflow](#game-logic---negative-workflow)
+    - [Multiplayer](#multiplayer)
   - [Possible bugs](#possible-bugs)
 
 ## Testes automatizados
 
-### Stack Escolhida:
+### Stack dos testes
   
   - [Webdriverio](https://webdriver.io/)
   - CucumberJs 
@@ -99,68 +103,161 @@ https://github.com/ppaulocm/appium-tranca-mobile
 
 ### Casos de teste automatizados
 
-1. Teste solicitado: "Efetuar a troca de idioma do device para verificar se as labels do jogo estão corretas na tela inicial - Home. A alteração deve ser feita de Português para Inglês."
+1. Teste solicitado: "Efetuar a troca de idioma do device para verificar se as labels do jogo estão corretas na tela inicial - Home. A alteração deve ser feita de Português para Inglês." (Scenario: Check main menu labels in current device language)
 
-    Nesse cenário imaginei que os testes de validação de idioma poderiam ser executados como uma suite a parte. Por isso, criei um arquivo de configuração para cada idioma,wdio.android.app-en.conf.js e wdio.android.app-pt.conf.js. Ambos executam o mesmo teste. O teste lê o valor do capability locale para determinar qual o idioma será validado. Os resources que serão validados estão no arquivo ......... Dessa forma, qualquer alteração de resource deve ser atualizada nesse arquivo sem que os testes sejam atualizados.
-
-################ [gif dos testes] ######################
-
-
-2. Acessar opção multiplayer sem conexão com a internet.
+    Nesse cenário imaginei que os testes de validação de idioma poderiam ser executados como uma suite a parte. Por isso, criei um arquivo de configuração para cada idioma,wdio.android.app-en.conf.js e wdio.android.app-pt.conf.js. Ambos executam o mesmo teste. O teste lê o valor do capability locale para determinar qual o idioma será validado. Os resources que serão validados estão no arquivo 'tests\data\resx.json' Dessa forma, qualquer alteração de resource deve ser atualizada nesse arquivo sem que os testes sejam atualizados.
+ 
+2. Acessar opção multiplayer sem conexão com a internet.(Scenario: Access multiplayer tab without internet connection)
    
     Esse teste desabilita o wifi e tenta acessar a area online do jogo. Após o erro, o teste é finalizado e o wifi religado.
 
-3. Convidar novos jogadores após logar com facebook
+3. Convidar novos jogadores após logar com facebook. (Scenario: Invite new players using facebook account)
 
     Neste teste é necessário que o Tranca Jogatina tenha permissão para acessar o facebook.
 
-4. Alterar nickname usando a conta do Jogatina (Possível BUG)
+4. Alterar nickname usando a conta do Jogatina. (Scenario: Change nickname using Jogatina account) - (Possível BUG)
 
  Gostaríamos que fosse escolhido 3 (três ou mais) fluxos para desenvolver testes de interface automatizados com BDD em qualquer tela do aplicativo.
 
 
 
 ## Test Cases
-Escrevi alguns casos de teste e os demais apenas coloquei a descrição. A maioria dos CTs são relativos as funcionalidades do game.
+Escrevi alguns casos de teste e os demais apenas coloquei a descrição. Sobre a suíte 'Game Rules', imaginao duas possibilidades para automatizar os testes com focos diferentes. Acredito que vocês já possam ter elas implementadas.
+
+1. Mockar o cenário inicial da partida com as cartas específica para testar os Casos de Teste da suite 'Game Rules'. Basicamente é carregar uma tela com Jogo já iniciado e apenas validar o resultado de cada ação. 
+
+Prós: 
+- Testes que cobririam as regras de negócio seriam rápidos
+- A solução poderia ser utilizada em vários jogos diferentes
+- Maior aproximação com a equipe de desenvolvimento
+
+Contra:
+- Pode ter uma alta complexidade 
+
+2. Implementar o teste de UI com as regras de negócio para que fique jogando continuadamente fazendo teste exploratórios
+Prós
+- Testes exploratórios contínuos
+
+Contras
+- Não é escalável pois cada jogo teria que funções específicas para atuar como um robo independente.
+- Demora para achar um bug após algum fix ou release com nova funcionalidade
+  
 
 ### Test Cases - Settings
-1. Alterar nível de dificuldade para fácil e confirmar o nível entrando na tela, voltar para normal e depois modificar para dificil (BUG)
-2. Tentar cadastrar um usuário já cadastrado (BUG)
-3. Tentar alterar a senha de um usuário já cadastrado na tela de cadastro (BUG)
-4. Cadastrar novo usuário com email som caracteres especiais. Ex: select*from@gmail.com (BUG)
 
-### Test Cases - Game Play Offline
+#### Settings - Login 
 
-Iniciar o jogo, abandonar a partida e voltar para a mesma partida
-Iniciar o jogo, abandonar a partida e iniciar um novo jogo
-Reordenar as cartas por naipe e ordenação alfanumérica
+1. **Register new user creating a Jogatina account**
+Description: This test case validates app behavior when a new user creates a new account on Jogatina.
+Pre-Condition: No user must be logged on app
+Steps:
+   1. Access the app Tranca Jogatina
+   2. Access Settings button
+   3. Tap on 'Login or Sign' link
+   4. Tap on Sign Up
+   5. Fill fields with valid email and password. Email must no be associated with an existent account. 
+   6. Tap on 'Create Account' button
+   
+Expected Result: Account must be created and generic username must be displayed at top pf multiplayer screen.
+Pos Condition: User is logged with new Jogatina account and able to play online.
 
-Cenários passíveis de automação considerando alta probabilidade de acontecerem:
-Comprar carta do monte e jogar outra carta no lixo
-Comprar carta do monte e jogar a mesma carta no lixo
-Comprar carta do lixo e baixar uma trinca na mesa sem a carta 2
-Comprar carta do lixo e baixar uma trinca na mesa com a carta 2 
-Comprar carta do lixo e baixar uma sequencia na mesa sem a carta 2
-Comprar carta do lixo e baixar uma sequencia na mesa com a carta 2
+2. Register an user that was already register before (BUG)
+3. Try to register an user that was already register informing a new password (BUG)
+4. Register an new user using an email with special characters. Ex:select*from@gmail.com (BUG)
 
-Cenários com menor probabilidade de acontecer e por isso com menor prioridade de automação
-Baixar 3 vermelho na mesa depois de comprar qualquer carta
-Baixar 3 vermelho na mesa antes de comprar qualquer carta 
-Adicionar carta 2 em uma sequencia que já tenha uma carta 2
-Adicionar carta 2 em uma 'trinca' que já tenha uma carta 2
 
-#### Fluxos negativos
-Baixar cartas na mesa antes de comprar
-Baixar cartas na mesa de que formam sequencia numérica de naipes diferentes
-Comprar carta do monte durante jogada do adversário
+#### Settings - Game Level 
+1. **Change Difficulty level**
 
-### Test Cases - Game Play Online
+Description: This test case validates app behavior when player change game difficulty level in Portuguese. (Bug)
+Pre-Condition: none
+Steps:
+   1. Access the app Tranca Jogatina
+   2. Access Settings button
+   3. Tap on 'Difficulty Level' button
+      1. Result: Dialog opens with Normal option selected.
 
-Initiate an online match as guest (BUG)
-Initiate an online match as Jogatina User (BUG)
-Iniciar um jogo online logado com a conta do facebook
-Iniciar um jogo online logado na conta Jogatina e não fazer nenhuma ação até que o tempo acabe
+   4. Tap on Hard option
+   5. Tap on 'Difficulty Level' button again
+      1. Result: Dialog opens with Hard option selected.
+   6. Tap on Easy option
+   5. Tap on 'Difficulty Level' button again
+      1. Result: Dialog opens with Easy option selected.
+   6. Tap on Normal option
+   7. Tap on 'Difficulty Level' button again
+      1. Result: Dialog opens with Normal option selected.
+   
+Expected Result: All changes must be made successfully.
+Pos Condition: Normal option must be selected.
 
+
+2. This test case validates app behavior when player change game difficulty level in English. 
+
+### Test Cases - Game Play
+
+#### Game Screen 
+
+1. **Start new game, leave game and back to the same game**
+
+Description: This test case validates app behavior when player abandon the game and back to the same game
+Pre-Condition: Application cache must be cleaned.
+Steps:
+   1. Access the app Tranca Jogatina
+   2. Access 'Play Now!' button
+   3. Tap on '2 Players'
+      1. Game screen is shown
+   4. User must save cards Ordering and the card that is on the 'Discard'
+   5. Tap on Menu button
+   6. Navigate to button 'Abandon the game' at bottom of screen
+   7. Tap button 'Abandon the game'
+   8. Tap on exit
+      1. Main app screen is shown
+   9.  Access 'Play Now!' button
+       1.  Dialog open asking to continue previous game or start a new one
+   10. Tap on continue button
+
+Expected Result: Game must be the same. Cards must be the same and respect same order. The card at 'Discard' area must be the same
+Pos Condition: The same game must be loaded and user must be able to play it.
+   
+2. Start new game, leave game and start a new game
+
+3. Reordering cards by suit and alphanumeric ordering
+
+
+#### Game Rules 
+
+1. Draw a card from the pile and discard a different one
+2. Draw a card from the pile and discard the same
+3. Draw a card from the pile and put 3 cards of same value on the table without use card '2'
+4. Draw a card from the pile and put 3 cards of same value on the table using card '2'
+5. Draw a card from the pile and put 3 cards in sequence of the same suit on the table without use card '2'
+6. Draw a card from the pile and put 3 cards in sequence of the same suit on the table using card '2'
+7. Draw a card from the discard pile and put 3 cards of same value on the table without use card '2'
+8. Draw a card from the discard pile and put 3 cards of same value on the table using card '2'
+9. Draw a card from the discard pile and put 3 cards in sequence of the same suit on the table without use card '2'
+10. Draw a card from the discard pile and put 3 cards in sequence of the same suit on the table using card '2'
+11. Draw a card from the pile and put some '3' of red suit card on the table
+
+
+#### Game Logic - Negative Workflow
+
+
+1. Put 3 cards in sequence on the table without draw from pile
+2. Put 3 cards with same value on the table without draw from pile
+3. Put 3 cards on the table that forms a sequence but with different suits
+4. Draw card from pile during adversary action
+5. Put red 3 card before draw from pile
+6. Add card 2 in a sequence that already have a card 2 
+7. Add card 2 in a set of 3 equal cards that already have a card 2 
+8. Finish game without canastra layed on table
+
+
+### Multiplayer
+
+1. Initiate an online match as guest (BUG)
+2. Initiate an online match as Jogatina User (BUG)
+3. Initiate an online game logged with facebook account
+4. Initiate an online game using Jogatina account and does not draw any card until player time ending
 
 
 ## Possible bugs
