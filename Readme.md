@@ -59,11 +59,7 @@ Node version is 12.16.1
 - info AppiumDoctor  ✔ emulator exists at: C:\Users\...\AppData\Local\Android\Sdk\tools\emulator.exe
 - info AppiumDoctor  ✔ JAVA_HOME\bin is set to: C:\Program Files (x86)\Java\jre1.8.0_251\bin
 
-<<<<<<< HEAD
 5. Clone Project or download project
-=======
-2. Clone Project or download project
->>>>>>> 226be497e5eafee247766f81f7f24f40f8035842
 https://github.com/ppaulocm/appium-tranca-mobile
 
 6. Install project and dependences
@@ -72,31 +68,33 @@ https://github.com/ppaulocm/appium-tranca-mobile
    ```
 
 ### Configurações de execução.
-1. É necessário uma conta Jogatina e uma conta facebook para executar os testes que devem ser setadas no arquivo .....
+1. É necessário uma conta Jogatina e uma conta facebook para executar os testes que devem ser setadas no arquivo tests\data\accounts.json
 2. É necessário que o tranca jogatina já tenha permissão de acesso aos dados do facebook.
 3. Por testar em um aplicativo no device, considerei que já existe uma conta do google play configurada e também que esteja com o autologin habilitado.
    
-   ![autologin](/docs/img/autologingoogle.jpg)
+   <img src="/docs/img/autologingoogle.jpg" width="250">
+
+
 4. O cenário de teste considera somente o uso do Wifi. O uso de dados móveis deve estar desabilitado. Poderia ter desabilitado essa configuração em tempo de execução mas era necessário permissões adicionais para interagir com a conexão 4G.
    
 ### Considerações sobre a construção dos testes
 
-> **Não achei Accessibility IDs	na aplicação, que seria o selector mais seguro e com maior chance de compartilhamento entre Android/IOS. Optei por usar o XPath + resource-id  sempre que possível. Por exemplo:**
+> **Não achei Accessibility IDs	na aplicação, que seria o selector mais seguro e com maior chance de compartilhamento entre Android/IOS. Optei por usar o XPath + resource-id sempre que possível. Por exemplo:**
 >
 >```js
 >"//android.widget.Button[@resource-id='com.jogatina.tranca:id/inviteFriendsBtnFacebook']"
 >```
 
-> **Inicialmente iria escrever testes considerando a tela principal do jogo mas não consegui inspecionar nenhum elemento dessa tela. Apenas conseguir ver a view da tela por inteiro e do banner com anúncio.**
-> Minhas tentativas foram:
-> 1. Buscar trocar o cotexto da aplicação para WEBVIEW, sem sucesso.
-> 2. Utilizar o UIAutomatorViewer.
-> 3. Utilizar o debug no chrome mas para isso, a variável [setWebContentsDebuggingEnabled](https://developers.google.com/web/tools/chrome-devtools/remote-debugging/webviews) deveria estar setada como true. Como o app usado foi de produçao, acredito que esteja setada como false.
-> 4. Algumas issues do github estavam relacionadas com a configuração [setWebViewRenderProcessClient](https://developer.android.com/reference/android/webkit/WebView#setWebViewRenderProcessClient(java.util.concurrent.Executor,%20android.webkit.WebViewRenderProcessClient)). Talvez tenha relação com o resultado que encontrei no appium.
->
->
-> ![inspectGame](/docs/img/inspectGame.jpg)
+> **Inicialmente iria escrever testes considerando a tela principal do jogo mas não consegui inspecionar nenhum elemento dessa tela. Apenas conseguir ver a view da tela por inteiro e do banner com anúncio. Minhas tentativas de resolver o problema foram:**
 
+ 1. Buscar trocar o cotexto da aplicação para WEBVIEW, sem sucesso.
+ 2. Utilizar o UIAutomatorViewer.
+ 3. Utilizar o debug no chrome mas para isso, a variável [setWebContentsDebuggingEnabled](https://developers.google.com/web/tools/chrome-devtools/remote-debugging/webviews) deveria estar setada como true. Como o app usado foi de produçao, acredito que esteja setada como false.
+ 4. Algumas issues do github estavam relacionadas com a configuração [setWebViewRenderProcessClient](https://developer.android.com/reference/android/webkit/WebView#setWebViewRenderProcessClient(java.util.concurrent.Executor,%20android.webkit.WebViewRenderProcessClient)). Talvez tenha relação com o resultado que encontrei no appium.
+
+
+<img src="/docs/img/inspectGame.jpg"">
+ 
 
 > **Tempo de execução dos testes**
 > Apesar dos testes estarem rodando em um tempo aceitável, após a ultima assertiva, por estar executando diretamente no device, o dispositivo gera um bugreport com dados de utilização do sistema com o nome 'bugreport-sanders_nt-OPS...'. Não consegui desabilitar essa opção. Por isso, após as validações,a finalização da execução demora um tempo adicional para gerar esse report.
@@ -120,7 +118,6 @@ https://github.com/ppaulocm/appium-tranca-mobile
 
 4. Alterar nickname usando a conta do Jogatina. (Scenario: Change nickname using Jogatina account) - (Possível BUG)
 
- Gostaríamos que fosse escolhido 3 (três ou mais) fluxos para desenvolver testes de interface automatizados com BDD em qualquer tela do aplicativo.
 
 
 
