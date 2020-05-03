@@ -59,7 +59,11 @@ Node version is 12.16.1
 - info AppiumDoctor  ✔ emulator exists at: C:\Users\...\AppData\Local\Android\Sdk\tools\emulator.exe
 - info AppiumDoctor  ✔ JAVA_HOME\bin is set to: C:\Program Files (x86)\Java\jre1.8.0_251\bin
 
+<<<<<<< HEAD
 5. Clone Project or download project
+=======
+2. Clone Project or download project
+>>>>>>> 226be497e5eafee247766f81f7f24f40f8035842
 https://github.com/ppaulocm/appium-tranca-mobile
 
 6. Install project and dependences
