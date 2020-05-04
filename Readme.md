@@ -27,7 +27,7 @@
   - Appium 
   - NodeJs 
 
-> **Considerações:**
+**Considerações:**
 > 1. Escolhi usar o Webdriverio porque ele permite execução simultânea de cenários enquanto [WD](https://www.npmjs.com/package/wd)(Webdriver/Selenium 2 client) não. Além disso é mais atualizado que o WD. 
 > 
 > 2. Por ter mais experiência com o Mocha, resolvi escrever os testes com o cucumber para utilizar um novo framework.
