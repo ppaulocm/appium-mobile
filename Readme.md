@@ -219,6 +219,7 @@ Steps:
    6. Tap on 'Create Account' button
    
 Expected Result: Account must be created and generic username must be displayed at top pf multiplayer screen.
+
 Pos Condition: User is logged with new Jogatina account and able to play online.
 
 2. Register an user that was already register before (BUG)
@@ -230,7 +231,9 @@ Pos Condition: User is logged with new Jogatina account and able to play online.
 1. **Change Difficulty level**
 
 Description: This test case validates app behavior when player change game difficulty level in Portuguese. (Bug)
+
 Pre-Condition: none
+
 Steps:
    1. Access the app Tranca Jogatina
    2. Access Settings button
@@ -248,6 +251,7 @@ Steps:
       1. Result: Dialog opens with Normal option selected.
    
 Expected Result: All changes must be made successfully.
+
 Pos Condition: Normal option must be selected.
 
 
@@ -260,13 +264,15 @@ Pos Condition: Normal option must be selected.
 1. **Start new game, leave game and back to the same game**
 
 Description: This test case validates app behavior when player abandon the game and back to the same game
+
 Pre-Condition: Application cache must be cleaned.
+
 Steps:
    1. Access the app Tranca Jogatina
    2. Access 'Play Now!' button
    3. Tap on '2 Players'
       1. Game screen is shown
-   4. User must save cards Ordering and the card that is on the 'Discard'
+   4. User must save cards ordering and the card that is on the 'Discard'
    5. Tap on Menu button
    6. Navigate to button 'Abandon the game' at bottom of screen
    7. Tap button 'Abandon the game'
@@ -277,6 +283,7 @@ Steps:
    10. Tap on continue button
 
 Expected Result: Game must be the same. Cards must be the same and respect same order. The card at 'Discard' area must be the same
+
 Pos Condition: The same game must be loaded and user must be able to play it.
    
 2. Start new game, leave game and start a new game
