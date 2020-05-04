@@ -119,20 +119,28 @@ https://github.com/ppaulocm/appium-tranca-mobile
 
 ### Casos de teste automatizados
 
-1. Teste solicitado: "Efetuar a troca de idioma do device para verificar se as labels do jogo estão corretas na tela inicial - Home. A alteração deve ser feita de Português para Inglês." (Scenario: Check main menu labels in current device language)
+1. Teste solicitado: "Efetuar a troca de idioma do device para verificar se as labels do jogo estão corretas na tela inicial - Home. A alteração deve ser feita de Português para Inglês." 
 
+> Scenario: Check main menu labels in current device language
+>
 > Nesse cenário imaginei que os testes de validação de idioma poderiam ser executados como uma suite a parte. Por isso, criei um >arquivo de configuração para cada idioma, wdio.android.app-en.conf.js e wdio.android.app-pt.conf.js. Ambos executam o mesmo teste. O >teste lê o valor do capability locale para determinar qual o idioma será validado. Os resources que serão validados estão no arquivo >'tests\data\resx.json' Dessa forma, qualquer alteração de resource deve ser atualizada nesse arquivo sem que os testes sejam >atualizados.
  
-2. Acessar opção multiplayer sem conexão com a internet.(Scenario: Access multiplayer tab without internet connection)
-   
+2. Acessar opção multiplayer sem conexão com a internet.
+
+> Scenario: Access multiplayer tab without internet connection
+>
 > Esse teste desabilita o wifi e tenta acessar a area online do jogo. Após o erro, o teste é finalizado e o wifi religado.
 
-3. Convidar novos jogadores após logar com facebook. (Scenario: Invite new players using facebook account)
+3. Convidar novos jogadores após logar com facebook.
 
+> Scenario: Invite new players using facebook account
+>
 > Neste teste é necessário que o Tranca Jogatina tenha permissão para acessar o facebook.
 
-4. Alterar nickname usando a conta do Jogatina. (Scenario: Change nickname using Jogatina account) - (Possível BUG)
+4. Alterar nickname usando a conta do Jogatina. 
 
+> Scenario: Change nickname using Jogatina account - (Possível BUG)
+>
 > Esse cenário loga com a conta do Jogatina para depois trocar o nickname do jogador. 
 
 
