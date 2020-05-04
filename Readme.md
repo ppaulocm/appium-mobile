@@ -169,25 +169,25 @@ yarn report:open //abre o report
 ```
 
 ## Test Cases
-Escrevi alguns casos de teste e os demais apenas coloquei a descrição. Sobre a suíte 'Game Rules', imaginao duas possibilidades para automatizar os testes com focos diferentes. Acredito que vocês já possam ter elas implementadas.
-
-1. Mockar o cenário inicial da partida com as cartas específica para testar os Casos de Teste da suite 'Game Rules'. Basicamente é carregar uma tela com Jogo já iniciado e apenas validar o resultado de cada ação. 
-
-Prós: 
-- Testes que cobririam as regras de negócio seriam rápidos
-- A solução poderia ser utilizada em vários jogos diferentes
-- Maior aproximação com a equipe de desenvolvimento
-
-Contra:
-- Pode ter uma alta complexidade 
-
-2. Implementar o teste de UI com as regras de negócio para que fique jogando continuadamente fazendo teste exploratórios
-Prós
-- Testes exploratórios contínuos
-
-Contras
-- Não é escalável pois cada jogo teria que funções específicas para atuar como um robo independente.
-- Demora para achar um bug após algum fix ou release com nova funcionalidade
+> Escrevi alguns casos de teste e os demais apenas coloquei a descrição. Sobre a suíte 'Game Rules', imaginao duas possibilidades para automatizar os testes com focos diferentes. Acredito que vocês já possam ter elas implementadas.
+> 
+>1. Mockar o cenário inicial da partida com as cartas específica para testar os Casos de Teste da suite 'Game Rules'. Basicamente é carregar uma tela com Jogo já iniciado e apenas validar o resultado de cada ação. 
+>
+>Prós: 
+>- Testes que cobririam as regras de negócio seriam rápidos
+>- A solução poderia ser utilizada em vários jogos diferentes
+>- Maior aproximação com a equipe de desenvolvimento
+>
+>Contras:
+>- Pode ter uma alta complexidade 
+>
+>2. Implementar o teste de UI com as regras de negócio para que fique jogando continuadamente fazendo teste exploratórios
+>Prós
+>- Testes exploratórios contínuos
+>
+>Contras
+>- Não é escalável pois cada jogo teria que funções específicas para atuar como um robo independente.
+>- Demora para achar um bug após algum fix ou release com nova funcionalidade
   
 
 ### Test Cases - Settings
