@@ -179,7 +179,7 @@ yarn report:open //abre o report
 >       - Testes exploratórios contínuos
 >
 >       Contras
->       - Não é escalável pois cada jogo teria que funções específicas para atuar como um robo independente.
+>       - Não é escalável pois cada jogo teria que funções específicas para atuar como um robô independente.
 >       - Demora para achar um bug após algum fix ou release com nova funcionalidade
 >
 >3. Validar as regras de negócio do jogo utilizando APIs. 
@@ -190,7 +190,7 @@ yarn report:open //abre o report
 >       - Escalável
 >
 >       Contras
->       
+>       - X
 >
   
 > **Essas opções são complementares e tem diferentes finalidades que conhecendo o sistema seriam aprimoradas.**
@@ -205,8 +205,11 @@ yarn report:open //abre o report
 #### Settings - Login 
 
 1. **Register new user creating a Jogatina account**
+
 Description: This test case validates app behavior when a new user creates a new account on Jogatina.
+
 Pre-Condition: No user must be logged on app
+
 Steps:
    1. Access the app Tranca Jogatina
    2. Access Settings button
