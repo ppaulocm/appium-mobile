@@ -69,20 +69,7 @@ https://github.com/ppaulocm/appium-tranca-mobile
    
 7. Caso os testes sejam executados no dispositivo, é necessário habilitar o USB Debuging nas configurações de desenvolvedor. 
 
-### Configurações de execução.
-1. É necessário uma conta Jogatina e uma conta facebook para executar os testes que devem ser setadas no arquivo tests\data\accounts.json
-2. É necessário que o tranca jogatina já tenha permissão de acesso aos dados do facebook.
-3. Desabilitei no  Google Play Games a opção de 'Login automático em jogos compatíveis' para que o Login do Google Play não abra quando o jogar carregar. **DESMARCAR A OPÇÃO LOGIN AUTOMÁTICO nas configurações do Play Games .**
-
-<p align="center">   
-   <img src="/docs/img/disableAutoLogin.jpg" width="600">
-   <img  src="/docs/img/autologingoogle.jpg" width="250">
-</p>
-
-
-4. O cenário de teste considera somente o uso do Wifi. O uso de dados móveis deve estar desabilitado. Poderia ter desabilitado essa configuração em tempo de execução mas era necessário permissões adicionais para interagir com a conexão 4G ou com o modo avião.
-   
-### Considerações sobre a construção dos testes
+### Construção dos testes
 
 > **Não achei Accessibility IDs	na aplicação, que seria o selector mais seguro para ser utilizado. No XCUITest é o elemento accessibility-id e no Android é o elemento content-desc. Optei por usar o XPath + resource-id sempre que possível. Por exemplo:**
 >
@@ -104,6 +91,19 @@ https://github.com/ppaulocm/appium-tranca-mobile
 > **Tempo de execução dos testes**
 > Apesar dos testes estarem rodando em um tempo aceitável, após a ultima assertiva, por estar executando diretamente no device, o dispositivo gera um bugreport com dados de utilização do sistema com o nome 'bugreport-sanders_nt-OPS...'. Não consegui desabilitar essa opção. Por isso, após as validações, a finalização da execução demora um tempo adicional para gerar esse report.
 
+
+### Configurações de execução
+1. É necessário uma conta Jogatina e uma conta facebook para executar os testes que devem ser setadas no arquivo tests\data\accounts.json
+2. É necessário que o tranca jogatina já tenha permissão de acesso aos dados do facebook.
+3. Desabilitei no  Google Play Games a opção de 'Login automático em jogos compatíveis' para que o Login do Google Play não abra quando o jogar carregar. **DESMARCAR A OPÇÃO LOGIN AUTOMÁTICO nas configurações do Play Games .**
+
+<p align="center">   
+   <img src="/docs/img/disableAutoLogin.jpg" width="600">
+   <img  src="/docs/img/autologingoogle.jpg" width="250">
+</p>
+
+
+4. O cenário de teste considera somente o uso do Wifi. O uso de dados móveis deve estar desabilitado. Poderia ter desabilitado essa configuração em tempo de execução mas era necessário permissões adicionais para interagir com a conexão 4G ou com o modo avião.
 
 ### Casos de teste automatizados
 
