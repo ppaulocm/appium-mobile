@@ -117,6 +117,8 @@ https://github.com/ppaulocm/appium-tranca-mobile
 4. O cenário de teste considera somente o uso do Wifi. O uso de dados móveis deve estar desabilitado. Essa configuração poderia ter sido desabilitada durante a execução mas era necessário permissões adicionais para interagir com a conexão 4G ou com o modo avião.
 
 
+### Casos de teste automatizados
+
 1. Teste solicitado: "Efetuar a troca de idioma do device para verificar se as labels do jogo estão corretas na tela inicial - Home. A alteração deve ser feita de Português para Inglês." (Scenario: Check main menu labels in current device language)
 
 > Nesse cenário imaginei que os testes de validação de idioma poderiam ser executados como uma suite a parte. Por isso, criei um >arquivo de configuração para cada idioma, wdio.android.app-en.conf.js e wdio.android.app-pt.conf.js. Ambos executam o mesmo teste. O >teste lê o valor do capability locale para determinar qual o idioma será validado. Os resources que serão validados estão no arquivo >'tests\data\resx.json' Dessa forma, qualquer alteração de resource deve ser atualizada nesse arquivo sem que os testes sejam >atualizados.
@@ -131,7 +133,7 @@ https://github.com/ppaulocm/appium-tranca-mobile
 
 4. Alterar nickname usando a conta do Jogatina. (Scenario: Change nickname using Jogatina account) - (Possível BUG)
 
-> Esse cenário loga com a conta do Jogatina para depois trocar o nickname do jogador.
+> Esse cenário loga com a conta do Jogatina para depois trocar o nickname do jogador. 
 
 
 ### Executando os testes
