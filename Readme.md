@@ -7,11 +7,10 @@
     - [Construção dos testes](#construção-dos-testes)
     - [Configurações de execução](#configurações-de-execução)
     - [Casos de teste automatizados](#casos-de-teste-automatizados)
-    - [Casos de teste automatizados](#casos-de-teste-automatizados-1)
     - [Executando os testes](#executando-os-testes)
     - [Reports](#reports)
+  - [Propostas de automação](#propostas-de-automação)
   - [Test Cases](#test-cases)
-    - [Propostas de automação](#propostas-de-automação)
     - [Test Cases - Settings](#test-cases---settings)
       - [Settings - Login](#settings---login)
       - [Settings - Game Level](#settings---game-level)
@@ -22,17 +21,7 @@
     - [Multiplayer](#multiplayer)
   - [Possible bugs](#possible-bugs)
     
-    - [Casos de teste automatizados](#casos-de-teste-automatizados)
-  - [Test Cases](#test-cases)
-    - [Test Cases - Settings](#test-cases---settings)
-      - [Settings - Login](#settings---login)
-      - [Settings - Game Level](#settings---game-level)
-    - [Test Cases - Game Play](#test-cases---game-play)
-      - [Game Screen](#game-screen)
-      - [Game Rules](#game-rules)
-      - [Game Logic - Negative Workflow](#game-logic---negative-workflow)
-    - [Multiplayer](#multiplayer)
-  - [Possible bugs](#possible-bugs)
+    
 
 ## Testes automatizados
 
@@ -170,11 +159,9 @@ yarn report:generate //gera o report
 yarn report:open //abre o report
 ```
 
-## Test Cases
+## Propostas de automação
 
-### Propostas de automação
-
-> Escrevi alguns casos de teste e os demais apenas coloquei a descrição. Sobre a suíte 'Game Rules', imagino 3 possibilidades para automatizar os testes com focos diferentes. Acredito que vocês já possam ter elas implementadas.
+> Sobre a suíte 'Game Rules', imagino 3 possibilidades para automatizar os testes com focos diferentes. Acredito que vocês já possam ter elas implementadas.
 > 
 >1. Mockar o cenário inicial da partida com as cartas específica para testar os Casos de Teste da suite 'Game Rules'. Basicamente é carregar uma tela com Jogo já iniciado e apenas validar o resultado de cada ação. 
 >
@@ -208,7 +195,10 @@ yarn report:open //abre o report
   
 > **Essas opções são complementares e tem diferentes finalidades que conhecendo o sistema seriam aprimoradas.**
 
-  
+
+## Test Cases
+
+> Escrevi alguns casos de teste e os demais apenas coloquei a descrição.
 
 ### Test Cases - Settings
 
