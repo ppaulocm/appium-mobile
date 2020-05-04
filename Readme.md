@@ -66,6 +66,8 @@ https://github.com/ppaulocm/appium-tranca-mobile
    ```js
     npm i
    ```
+   
+7. Caso os testes sejam executados no dispositivo, é necessário habilitar o USB Debuging nas configurações de desenvolvedor. 
 
 ### Configurações de execução.
 1. É necessário uma conta Jogatina e uma conta facebook para executar os testes que devem ser setadas no arquivo tests\data\accounts.json
@@ -100,7 +102,7 @@ https://github.com/ppaulocm/appium-tranca-mobile
  
 
 > **Tempo de execução dos testes**
-> Apesar dos testes estarem rodando em um tempo aceitável, após a ultima assertiva, por estar executando diretamente no device, o dispositivo gera um bugreport com dados de utilização do sistema com o nome 'bugreport-sanders_nt-OPS...'. Não consegui desabilitar essa opção. Por isso, após as validações,a finalização da execução demora um tempo adicional para gerar esse report.
+> Apesar dos testes estarem rodando em um tempo aceitável, após a ultima assertiva, por estar executando diretamente no device, o dispositivo gera um bugreport com dados de utilização do sistema com o nome 'bugreport-sanders_nt-OPS...'. Não consegui desabilitar essa opção. Por isso, após as validações, a finalização da execução demora um tempo adicional para gerar esse report.
 
 
 ### Casos de teste automatizados
