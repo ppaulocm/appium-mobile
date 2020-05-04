@@ -49,8 +49,8 @@ npm install -g appium-doctor   // instalar o appium doctor
 appium-doctor   //verificar algum problema na instalação do appium
 ```
 
-> Referência do ambiente de desenvolvimento
-Node version is 12.16.1
+Referência do ambiente de desenvolvimento:
+- Node version is 12.16.1
 - info AppiumDoctor  ✔ ANDROID_HOME is set to: C:\Users\...\AppData\Local\Android\Sdk
 - info AppiumDoctor  ✔ JAVA_HOME is set to: C:\Program Files (x86)\Java\jre1.8.0_251
 - info AppiumDoctor  ✔ adb exists at: C:\Users\...\AppData\Local\Android\Sdk\platform-tools\adb.exe 
@@ -70,7 +70,7 @@ https://github.com/ppaulocm/appium-tranca-mobile
 ### Configurações de execução.
 1. É necessário uma conta Jogatina e uma conta facebook para executar os testes que devem ser setadas no arquivo tests\data\accounts.json
 2. É necessário que o tranca jogatina já tenha permissão de acesso aos dados do facebook.
-3. Desabilitei no  Google Play Games a opção de Login automático em jogos compatíveis para que o Login do Google Play não abra quando o jogar carregar. **DESMARCAR A OPÇÃO LOGIN AUTOMÁTICO nas configurações do Play Games .**
+3. Desabilitei no  Google Play Games a opção de 'Login automático em jogos compatíveis' para que o Login do Google Play não abra quando o jogar carregar. **DESMARCAR A OPÇÃO LOGIN AUTOMÁTICO nas configurações do Play Games .**
 
 <p align="center">   
    <img src="/docs/img/disableAutoLogin.jpg" width="600">
@@ -78,11 +78,11 @@ https://github.com/ppaulocm/appium-tranca-mobile
 </p>
 
 
-4. O cenário de teste considera somente o uso do Wifi. O uso de dados móveis deve estar desabilitado. Poderia ter desabilitado essa configuração em tempo de execução mas era necessário permissões adicionais para interagir com a conexão 4G.
+4. O cenário de teste considera somente o uso do Wifi. O uso de dados móveis deve estar desabilitado. Poderia ter desabilitado essa configuração em tempo de execução mas era necessário permissões adicionais para interagir com a conexão 4G ou com o modo avião.
    
 ### Considerações sobre a construção dos testes
 
-> **Não achei Accessibility IDs	na aplicação, que seria o selector mais seguro e com maior chance de compartilhamento entre Android/IOS. Optei por usar o XPath + resource-id sempre que possível. Por exemplo:**
+> **Não achei Accessibility IDs	na aplicação, que seria o selector mais seguro para ser utilizado. No XCUITest é o elemento accessibility-id e no Android é o elemento content-desc. Optei por usar o XPath + resource-id sempre que possível. Por exemplo:**
 >
 >```js
 >"//android.widget.Button[@resource-id='com.jogatina.tranca:id/inviteFriendsBtnFacebook']"
