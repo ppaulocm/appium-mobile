@@ -30,7 +30,7 @@
 > **Considerações:**
 > 1. Escolhi usar o Webdriverio porque ele permite execução simultânea de cenários enquanto [WD](https://www.npmjs.com/package/wd)(Webdriver/Selenium 2 client) não. Além disso é mais atualizado que o WD. 
 > 
-> 2. Trabalho atualmente com o Mocha então resolvi escrever os testes com o cucumber para utilizar algo diferente do que uso no dia a dia. 
+> 2. Por ter mais experiência com o Mocha, resolvi escrever os testes com o cucumber para utilizar um novo framework.
 >
 > 3. Os testes foram construídos executando a aplicação diretamente no dispositivo MotoG 5S Plus - Android 8.1.0.
 
