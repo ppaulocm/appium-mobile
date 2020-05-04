@@ -81,7 +81,7 @@ https://github.com/ppaulocm/appium-tranca-mobile
     npm i
    ```
    
-7. Caso os testes sejam executados no dispositivo, é necessário habilitar o USB Debuging nas configurações de desenvolvedor. 
+7. Caso os testes sejam executados no dispositivo, é necessário habilitar o USB Debugging nas configurações de desenvolvedor. 
 
 ### Construção dos testes
 
@@ -91,16 +91,15 @@ https://github.com/ppaulocm/appium-tranca-mobile
 >"//android.widget.Button[@resource-id='com.jogatina.tranca:id/inviteFriendsBtnFacebook']"
 >```
 
-> **Inicialmente iria escrever testes considerando a tela principal do jogo mas não consegui inspecionar nenhum elemento dessa tela. Apenas conseguir ver a view da tela por inteiro e do banner com anúncio. Minhas tentativas de resolver o problema foram:**
+> **Inicialmente iria escrever testes considerando a tela principal do jogo mas não consegui inspecionar nenhum elemento dessa tela. Apenas conseguir acessar a view da tela por inteiro e do banner com anúncio. Minhas tentativas de resolver o problema foram:**
 
- 1. Buscar trocar o cotexto da aplicação para WEBVIEW, sem sucesso.
+ 1. Tentar trocar o cotexto da aplicação para WEBVIEW. Só consegui acessar o contexto NATIVE_APP, talvez o motivo seja o item 3.
  2. Utilizar o UIAutomatorViewer.
  3. Utilizar o debug no chrome mas para isso, a variável [setWebContentsDebuggingEnabled](https://developers.google.com/web/tools/chrome-devtools/remote-debugging/webviews) deveria estar setada como true. Como o app usado foi de produçao, acredito que esteja setada como false.
- 4. Algumas issues do github estavam relacionadas com a configuração [setWebViewRenderProcessClient](https://developer.android.com/reference/android/webkit/WebView#setWebViewRenderProcessClient(java.util.concurrent.Executor,%20android.webkit.WebViewRenderProcessClient)). Talvez tenha relação com o resultado que encontrei no appium.
+ 4. Algumas issues do github estavam relacionadas com a configuração [setWebViewRenderProcessClient](https://developer.android.com/reference/android/webkit/WebView#setWebViewRenderProcessClient(java.util.concurrent.Executor,%20android.webkit.WebViewRenderProcessClient)). Talvez tenha relação com o resultado que encontrei no appium inspector.
 
 
-<img src="/docs/img/inspectGame.jpg">
- 
+<img src="/docs/img/inspectGame.jpg" width="600">
 
 > **Tempo de execução dos testes**
 > Apesar dos testes estarem rodando em um tempo aceitável, após a ultima assertiva, por estar executando diretamente no device, o dispositivo gera um bugreport com dados de utilização do sistema com o nome 'bugreport-sanders_nt-OPS...'. Não consegui desabilitar essa opção. Por isso, após as validações, a finalização da execução demora um tempo adicional para gerar esse report.
