@@ -98,11 +98,9 @@ https://github.com/ppaulocm/appium-tranca-mobile
  3. Utilizar o debug no chrome mas para isso, a variável [setWebContentsDebuggingEnabled](https://developers.google.com/web/tools/chrome-devtools/remote-debugging/webviews) deveria estar setada como true. Como o app usado foi de produçao, acredito que esteja setada como false.
  4. Algumas issues do github estavam relacionadas com a configuração [setWebViewRenderProcessClient](https://developer.android.com/reference/android/webkit/WebView#setWebViewRenderProcessClient(java.util.concurrent.Executor,%20android.webkit.WebViewRenderProcessClient)). Talvez tenha relação com o resultado que encontrei no appium inspector.
 
-
-<img src="/docs/img/inspectGame.jpg" width="600">
-
-> **Tempo de execução dos testes**
-> Apesar dos testes estarem rodando em um tempo aceitável, após a ultima assertiva, por estar executando diretamente no device, o dispositivo gera um bugreport com dados de utilização do sistema com o nome 'bugreport-sanders_nt-OPS...'. Não consegui desabilitar essa opção. Por isso, após as validações, a finalização da execução demora um tempo adicional para gerar esse report.
+<p align="center">   
+    <img src="/docs/img/inspectGame.jpg" width="600">
+</p>
 
 
 ### Configurações de execução
@@ -149,6 +147,9 @@ yarn android-en.app --suite connection
 yarn android-en.app --suite invite
 yarn android-en.app --suite nickname
 ```
+
+**Tempo de execução dos testes**
+> Apesar dos testes estarem rodando em um tempo aceitável, após a ultima assertiva, por estar executando diretamente no device, o dispositivo gera um bugreport com dados de utilização do sistema com o nome 'bugreport-sanders_nt-OPS...'. Não consegui desabilitar essa opção. Por isso, após as validações, a finalização da execução demora um tempo adicional para gerar esse report.
 
 ### Reports
 
