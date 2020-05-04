@@ -106,7 +106,7 @@ https://github.com/ppaulocm/appium-tranca-mobile
 ### Configurações de execução
 1. É necessário uma conta Jogatina e uma conta facebook para executar os testes que devem ser setadas no arquivo tests\data\accounts.json
 2. É necessário que o tranca jogatina já tenha permissão de acesso aos dados do facebook.
-3. Desabilitei no  Google Play Games a opção de 'Login automático em jogos compatíveis' para que o Login do Google Play não abra quando o jogar carregar. **DESMARCAR A OPÇÃO LOGIN AUTOMÁTICO nas configurações do Play Games .**
+3. Desabilitar no  Google Play Games a opção de 'Login automático em jogos compatíveis' para que o Login do Google Play não abra quando o jogar carregar. **DESMARCAR A OPÇÃO LOGIN AUTOMÁTICO nas configurações do Play Games .**
 
 <p align="center">   
    <img src="/docs/img/disableAutoLogin.jpg" width="600">
@@ -114,24 +114,24 @@ https://github.com/ppaulocm/appium-tranca-mobile
 </p>
 
 
-4. O cenário de teste considera somente o uso do Wifi. O uso de dados móveis deve estar desabilitado. Poderia ter desabilitado essa configuração em tempo de execução mas era necessário permissões adicionais para interagir com a conexão 4G ou com o modo avião.
+4. O cenário de teste considera somente o uso do Wifi. O uso de dados móveis deve estar desabilitado. Essa configuração poderia ter sido desabilitada durante a execução mas era necessário permissões adicionais para interagir com a conexão 4G ou com o modo avião.
 
-
-### Casos de teste automatizados
 
 1. Teste solicitado: "Efetuar a troca de idioma do device para verificar se as labels do jogo estão corretas na tela inicial - Home. A alteração deve ser feita de Português para Inglês." (Scenario: Check main menu labels in current device language)
 
-    Nesse cenário imaginei que os testes de validação de idioma poderiam ser executados como uma suite a parte. Por isso, criei um arquivo de configuração para cada idioma, wdio.android.app-en.conf.js e wdio.android.app-pt.conf.js. Ambos executam o mesmo teste. O teste lê o valor do capability locale para determinar qual o idioma será validado. Os resources que serão validados estão no arquivo 'tests\data\resx.json' Dessa forma, qualquer alteração de resource deve ser atualizada nesse arquivo sem que os testes sejam atualizados.
+> Nesse cenário imaginei que os testes de validação de idioma poderiam ser executados como uma suite a parte. Por isso, criei um >arquivo de configuração para cada idioma, wdio.android.app-en.conf.js e wdio.android.app-pt.conf.js. Ambos executam o mesmo teste. O >teste lê o valor do capability locale para determinar qual o idioma será validado. Os resources que serão validados estão no arquivo >'tests\data\resx.json' Dessa forma, qualquer alteração de resource deve ser atualizada nesse arquivo sem que os testes sejam >atualizados.
  
 2. Acessar opção multiplayer sem conexão com a internet.(Scenario: Access multiplayer tab without internet connection)
    
-    Esse teste desabilita o wifi e tenta acessar a area online do jogo. Após o erro, o teste é finalizado e o wifi religado.
+> Esse teste desabilita o wifi e tenta acessar a area online do jogo. Após o erro, o teste é finalizado e o wifi religado.
 
 3. Convidar novos jogadores após logar com facebook. (Scenario: Invite new players using facebook account)
 
-    Neste teste é necessário que o Tranca Jogatina tenha permissão para acessar o facebook.
+> Neste teste é necessário que o Tranca Jogatina tenha permissão para acessar o facebook.
 
 4. Alterar nickname usando a conta do Jogatina. (Scenario: Change nickname using Jogatina account) - (Possível BUG)
+
+> Esse cenário loga com a conta do Jogatina para depois trocar o nickname do jogador.
 
 
 ### Executando os testes
