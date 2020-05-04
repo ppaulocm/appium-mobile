@@ -14,7 +14,7 @@
     - [Test Cases - Settings](#test-cases---settings)
       - [Settings - Login](#settings---login)
       - [Settings - Game Level](#settings---game-level)
-    - [Test Cases - Game Play](#test-cases---game-play)
+    - [Game Play](#game-play)
       - [Game Screen](#game-screen)
       - [Game Rules](#game-rules)
       - [Game Logic - Negative Workflow](#game-logic---negative-workflow)
@@ -222,15 +222,15 @@ Expected Result: Account must be created and generic username must be displayed 
 
 Pos Condition: User is logged with new Jogatina account and able to play online.
 
-2. Register an user that was already register before (BUG)
-3. Try to register an user that was already register informing a new password (BUG)
-4. Register an new user using an email with special characters. Ex:select*from@gmail.com (BUG)
+2. Register an user that was already register before (#BUG5)
+3. Try to register an user that was already register informing a new password (#BUG6)
+4. Register an new user using an email with special characters. Ex:select*from@gmail.com ([#BUG7)
 
 
 #### Settings - Game Level 
 1. **Change Difficulty level**
 
-Description: This test case validates app behavior when player change game difficulty level in Portuguese. (Bug)
+Description: This test case validates app behavior when player change game difficulty level in Portuguese. (#BUG1)
 
 Pre-Condition: none
 
@@ -257,7 +257,7 @@ Pos Condition: Normal option must be selected.
 
 2. This test case validates app behavior when player change game difficulty level in English. 
 
-### Test Cases - Game Play
+### Game Play
 
 #### Game Screen 
 
@@ -313,64 +313,63 @@ Pos Condition: The same game must be loaded and user must be able to play it.
 
 ### Multiplayer
 
-1. Initiate an online match as guest (BUG)
-2. Initiate an online match as Jogatina User (BUG)
+1. Initiate an online match as guest (#BUG3)
+2. Initiate an online match as Jogatina User (#BUG3)
 3. Initiate an online game logged with facebook account
 4. Initiate an online game using Jogatina account and does not draw any card until player time ending
 
 ## Possible bugs
-Apesar de não conhecer as regras de negócio do aplicativo, adicionei alguns cenários que possuem bug ou limitações.
+> Descrevi alguns possíveis bugs apesar de achar que alguns deles possam ser instabilidades ou alguma restrição. Os bugs 5, 6 e 7 na verdade eu descrevi porque imaginei alguma inconsistência na base.
 
-**1. Não é possível setar o nível de dificuldade do jogo para fácil quando o sistema está em português**
+**1. It is not possible to set difficulty level as Easy when app language is Portuguese.** [#BUG1]
 
 Steps:
-1. Abrir a aplicação
-2. Acessar o menu Settings
-3. Acessar o item 'Nivel de Dificuldade'
-4. Selecionar a opção fácil
-5. Acessar novamente o item 'Nivel de Dificuldade'
+1. Open app
+2. Access Settings button
+3. Access item 'Difficulty Level'
+4. Select 'Easy' option
+5. Access item 'Difficulty Level' again
 
 **Expecte Result:**
-A opção fácil deveria estar selecionada
+Easy option must be selected.
 
 **Found Result:**
-A opção difícil está selecionada
+Hard option is selected.
 
 **Environment:**
-Device: Moto G5S Plus
-Android: 8.1.0
-Connection: WIFI
+Device: Moto G5S Plus - Android: 8.1.0 - Connection: WIFI
 
-![bug#1](/docs/img/levelbug.mp4)
+Evidence on: /docs/img/levelbug.mp4
 
 ---
 
-**2. Exibição de regra apresenta problema de exibição**
+**2. Rule exhibition has visual problems.** [#BUG2]
+
 Steps:
-1. Abrir a aplicação
-2. Acessar 'Jogar Agora!'
-3. Acessar '2 Jogadores'
-4. Acessar o Menu dentro do jogo
-5. Acessar o ícone de interrogação no topo da tela
+1. Open app
+2. Tap 'Play Now!' Button 
+3. Tap on '2 players'
+4. Access menu inside game screen
+5. Access question mark icon at top area
 
 **Expecte Result:**
-Regras devem ser exibidas com fundo uniforme e sem que o texto esteja sobrescrito, possibilitando a leitura do mesmo.
+Rules must be shown with a uniform background and without overwrited tests.
 
 **Found Result:**
-Há diferença da cor de background ao rolar a tela e o textos estão sobrescritos.
+Rules background has different colors (Black and white) and texts are overwrited.
 
-Device: Moto G5S Plus
-Android: 8.1.0
-Connection: WIFI
+**Environment:**
+Device: Moto G5S Plus - Android: 8.1.0 - Connection: WIFI
 
-![bug#2](/docs/img/rule.mp4)
+Evidence on: /docs/img/rule.mp4
 
 ---
 
-**3. [Intermitente] - Não é possível fazer login online usando a conta Jogatina ou como visitante**
+**3. [Intermitent] - It is not possible to initiate a multiplayer game as guest or using a Jogatina account** [#BUG3]
+
 Steps:
-1. Abrir a aplicação
-2. Access button 'MULTIPLAYER' 
+1. Open app
+2. Tap 'Multiplayer' Button 
 3. Select login 'later'
 4. Access button 2 players as guest
 
@@ -380,16 +379,14 @@ Game is initiated.
 **Found Result:**
 Multiplayer screen is shown and game does not begin.
 
-Device: Moto G5S Plus
-Android: 8.1.0
-Connection: WIFI
+**Environment:**
+Device: Moto G5S Plus - Android: 8.1.0 - Connection: WIFI
 
-![bug#3](/docs/img/multiplayerguestbug.mp4)
+Evidence on: /docs/img/multiplayerguestbug.mp4
 
 ---
 
-**4. Change nickname using Jotagina account**
-Pre-requiremt: No user must be logged
+**4. Change nickname using Jotagina account** [#BUG4]
 
 Steps:
 1. Open app
@@ -409,16 +406,16 @@ New  nickname must be shown at top of screen.
 **Found Result:**
 Old nickname is shown at top of screen. New nickname is shown only if user change screen and come back to multiplayer screen.
 
-Device: Moto G5S Plus
-Android: 8.1.0
-Connection: WIFI
+**Environment:**
+Device: Moto G5S Plus - Android: 8.1.0 - Connection: WIFI
 
-![bug#4](/docs/img/changenicknamebug.mp4)
+Evidence on: /docs/img/changenicknamebug.mp4
+
 
 ---
 
-**5. It is possible to Sign in twice with same email and password**
-> **This bug is to check any inconsistency on database.**
+**5. It is possible to Sign up twice with same email and password** [#BUG5]
+> **This bug is to check any inconsistency on database.** 
 
 Steps:
   1. Open app
@@ -437,7 +434,7 @@ Steps:
 
 ---
 
-**6. It is possible to Sign in twice with same email and password**
+**6. It is possible to register an user that was already register informing a new password.** [#BUG6]
 > **This bug is to check any inconsistency on database.**
 
 Steps:
@@ -452,9 +449,8 @@ Error must indicate that email it's already signed up.
 
 Found result:
 Generic error message appears indicating that service is not acessible.
-**This bug is to check any inconsistency on database.**
 
-**7. There is no treatment for special characters on sing up functionallity**
+**7. There is no treatment for special characters on sing up functionallity** [#BUG7]
 > **This bug is to check any inconsistency on database.**
 
 Steps:
