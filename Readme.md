@@ -286,11 +286,6 @@ Expected Result: Game must be the same. Cards must be the same and respect same 
 
 Pos Condition: The same game must be loaded and user must be able to play it.
    
-2. Start new game, leave game and start a new game
-
-3. Reordering cards by suit and alphanumeric ordering
-
-
 #### Game Rules 
 
 1. Draw a card from the pile and discard a different one
@@ -305,9 +300,7 @@ Pos Condition: The same game must be loaded and user must be able to play it.
 10. Draw a card from the discard pile and put 3 cards in sequence of the same suit on the table using card '2'
 11. Draw a card from the pile and put some '3' of red suit card on the table
 
-
 #### Game Logic - Negative Workflow
-
 
 1. Put 3 cards in sequence on the table without draw from pile
 2. Put 3 cards with same value on the table without draw from pile
@@ -318,14 +311,12 @@ Pos Condition: The same game must be loaded and user must be able to play it.
 7. Add card 2 in a set of 3 equal cards that already have a card 2 
 8. Finish game without canastra layed on table
 
-
 ### Multiplayer
 
 1. Initiate an online match as guest (BUG)
 2. Initiate an online match as Jogatina User (BUG)
 3. Initiate an online game logged with facebook account
 4. Initiate an online game using Jogatina account and does not draw any card until player time ending
-
 
 ## Possible bugs
 Apesar de não conhecer as regras de negócio do aplicativo, adicionei alguns cenários que possuem bug ou limitações.
