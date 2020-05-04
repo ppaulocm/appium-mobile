@@ -3,9 +3,23 @@
 - [Desafio QA Gazeus](#desafio-qa-gazeus)
   - [Testes automatizados](#testes-automatizados)
     - [Stack dos testes](#stack-dos-testes)
-    - [Instalação do ambiente:](#instalação-do-ambiente)
-    - [Configurações de execução.](#configurações-de-execução)
-    - [Considerações sobre a construção dos testes](#considerações-sobre-a-construção-dos-testes)
+    - [Instalação do ambiente](#instalação-do-ambiente)
+    - [Construção dos testes](#construção-dos-testes)
+    - [Configurações de execução](#configurações-de-execução)
+    - [Casos de teste automatizados](#casos-de-teste-automatizados)
+    - [Executando os testes](#executando-os-testes)
+    - [Reports](#reports)
+  - [Test Cases](#test-cases)
+    - [Test Cases - Settings](#test-cases---settings)
+      - [Settings - Login](#settings---login)
+      - [Settings - Game Level](#settings---game-level)
+    - [Test Cases - Game Play](#test-cases---game-play)
+      - [Game Screen](#game-screen)
+      - [Game Rules](#game-rules)
+      - [Game Logic - Negative Workflow](#game-logic---negative-workflow)
+    - [Multiplayer](#multiplayer)
+  - [Possible bugs](#possible-bugs)
+    
     - [Casos de teste automatizados](#casos-de-teste-automatizados)
   - [Test Cases](#test-cases)
     - [Test Cases - Settings](#test-cases---settings)
@@ -35,7 +49,7 @@
 > 3. Os testes foram construídos executando a aplicação diretamente no dispositivo MotoG 5S Plus - Android 8.1.0.
 
 
-### Instalação do ambiente:
+### Instalação do ambiente
 
 Requisitos:
 1. NodeJS previamente instalado
@@ -105,11 +119,12 @@ https://github.com/ppaulocm/appium-tranca-mobile
 
 4. O cenário de teste considera somente o uso do Wifi. O uso de dados móveis deve estar desabilitado. Poderia ter desabilitado essa configuração em tempo de execução mas era necessário permissões adicionais para interagir com a conexão 4G ou com o modo avião.
 
+
 ### Casos de teste automatizados
 
 1. Teste solicitado: "Efetuar a troca de idioma do device para verificar se as labels do jogo estão corretas na tela inicial - Home. A alteração deve ser feita de Português para Inglês." (Scenario: Check main menu labels in current device language)
 
-    Nesse cenário imaginei que os testes de validação de idioma poderiam ser executados como uma suite a parte. Por isso, criei um arquivo de configuração para cada idioma,wdio.android.app-en.conf.js e wdio.android.app-pt.conf.js. Ambos executam o mesmo teste. O teste lê o valor do capability locale para determinar qual o idioma será validado. Os resources que serão validados estão no arquivo 'tests\data\resx.json' Dessa forma, qualquer alteração de resource deve ser atualizada nesse arquivo sem que os testes sejam atualizados.
+    Nesse cenário imaginei que os testes de validação de idioma poderiam ser executados como uma suite a parte. Por isso, criei um arquivo de configuração para cada idioma, wdio.android.app-en.conf.js e wdio.android.app-pt.conf.js. Ambos executam o mesmo teste. O teste lê o valor do capability locale para determinar qual o idioma será validado. Os resources que serão validados estão no arquivo 'tests\data\resx.json' Dessa forma, qualquer alteração de resource deve ser atualizada nesse arquivo sem que os testes sejam atualizados.
  
 2. Acessar opção multiplayer sem conexão com a internet.(Scenario: Access multiplayer tab without internet connection)
    
@@ -122,7 +137,26 @@ https://github.com/ppaulocm/appium-tranca-mobile
 4. Alterar nickname usando a conta do Jogatina. (Scenario: Change nickname using Jogatina account) - (Possível BUG)
 
 
+### Executando os testes
+Os testes podem ser executados ao mesmo tempo ou individualmente com os seguintes comandos:
 
+```js
+yarn android-en.app  //todos os testes com idioma do dispositivo em inglês
+yarn android-pt.app  //todos os testes com idioma do dispositivo em português
+
+// Suites específicas - basta variar o idioma alterando android-en e android-pt
+yarn android-en.app --suite language
+yarn android-en.app --suite connection
+yarn android-en.app --suite invite
+yarn android-en.app --suite nickname
+```
+
+### Reports
+
+```js
+yarn report:generate //gera o report
+yarn report:open //abre o report
+```
 
 ## Test Cases
 Escrevi alguns casos de teste e os demais apenas coloquei a descrição. Sobre a suíte 'Game Rules', imaginao duas possibilidades para automatizar os testes com focos diferentes. Acredito que vocês já possam ter elas implementadas.
