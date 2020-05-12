@@ -1,0 +1,12 @@
+{
+    "login": {
+        "jogatina": {
+            "email": "email",
+            "passoword": "pass"
+        },
+        "facebook": {
+            "email": "email",
+            "passoword": "pass"
+        }
+    }
+}
